@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width" />
     <title>Best</title>
-    <%= csrf_meta_tags %> <%= csp_meta_tag %> 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%=
-    javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%=
+    stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track':
+    'reload' %> <%=javascript_include_tag 'application',
+    'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-   <%= render 'header' %>
+    <!-- <header>
+  <img
+    src="data:image/png;base64,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"
+    alt=""
+  />
+  <nav>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="<%= new_user_path %>">Inscription</a></li>
+      <li><a href="#">Contacts</a></li>
+    </ul>
+  </nav>
+  </header> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+            width="100px"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"></div>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+            <a class="nav-link" href="<%= new_user_path %>">Inscription</a>
+            <a class="nav-link" href="#">Contacts</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
-   <%= render 'footer' %>
+    <footer>&copy; BEST 2021</footer>
   </body>
 </html>
