@@ -1,0 +1,103 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// html {
+//   min-height: 100vh;
+// }
+// body {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// header {
+//   height: 70px;
+//   display: flex;
+//   justify-content: space-between;
+//   margin: 0 50px;
+//   align-items: center;
+//   background-color: #ccc;
+//   padding: 0;
+//   margin: 0;
+// }
+// header img {
+//   width: 100px;
+//   height: 100%;
+//   background-color: white;
+//   margin-left: 100px;
+// }
+// header ul {
+//   padding: 0;
+//   margin: 0;
+//   margin-right: 100px;
+// }
+// header nav ul::after {
+//   content: "";
+//   clear: both;
+//   display: block;
+// }
+
+// nav ul li {
+//   float: left;
+//   list-style: none;
+//   padding-left: 20px;
+// }
+// nav ul li a {
+//   text-decoration: none;
+//   display: block;
+//   color: #000;
+// }
+// nav ul li a:hover {
+//   text-decoration: none;
+//   display: block;
+//   color: white;
+// }
+
+// footer {
+//   background-color: #ccc;
+//   bottom: 0;
+//   padding: 20px 80px;
+//   display: flex;
+//   justify-content: center;
+// }
+
+section.welcome {
+  // padding: 20px 50px;
+  text-align: justify;
+}
+.grid-section {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 20px 50px;
+}
+.grid-item {
+  height: 25vh;
+  background-color: #ccc;
+  padding: 10px;
+  text-align: justify;
+  display: flex;
+  align-items: center;
+}
+// .auth-section {
+//   display: flex;
+//   justify-content: flex-end;
+//   padding: 20px 50px;
+// }
+// .auth-section a {
+//   text-decoration: none;
+//   font-size: 1.3rem;
+//   border: 1px solid black;
+//   padding: 5px;
+//   color: black;
+//   border-radius: 5px;
+// }
+// .auth-section a:hover {
+//   background-color: #ccc;
+//   color: white;
+//   border: 1px solid #ccc;
+// }
+// .container-default {
+//   min-height: 84vh;
+//   margin-left: 50px;
+// }
