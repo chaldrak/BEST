@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Best</title>
+    <title>BEST</title>
+    <link rel="icon" type="image/png" href="/best-icon1.png" />
     <%= csrf_meta_tags %> <%= csp_meta_tag %> <%=
     stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track':
     'reload' %> <%=javascript_include_tag 'application',
@@ -10,9 +11,8 @@
   </head>
 
   <body>
+    <p class="mb-4"><br></p>
     <%= render "partials/header" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render "partials/footer" %>
   </body>
