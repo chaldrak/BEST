@@ -17,6 +17,7 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
             <li><a class="nav-link" aria-current="page" href="/">Accueil</a></li>
+            <li><a class="nav-link" aria-current="page" href="/articles">Articles</a></li>
             <li><a class="nav-link" href="#">Contacts</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +29,7 @@
                     <li><a class="dropdown-item" href="/users/sign_out" data-method="delete"><i class="bi bi-power"></i> Logout</a></li>
                 </ul>
             </li>
-            <li><a class="btn btn-success" href="/users/sign_in">Poster</a></li>
+            <li><a class="btn btn-success" href="/articles/new">Poster</a></li>
         <% else %>
             <li><a class="nav-link" href="/users/sign_up">Sign up</a></li>
             <li><a class="btn btn-light" href="/users/sign_in">Sign in</a></li>

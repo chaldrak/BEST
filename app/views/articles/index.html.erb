@@ -1,2 +1,53 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<section class="container">
+    <div class="row pt-4">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 main">
+            <% flash.each do |key, value| %>
+                <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
+            <% end %>
+            <% @articles.each do |article| %>
+            <div class="card mb-4 p-1">
+                <div class="head d-flex">
+                    <table>
+                        <tr>
+                            <th>@<%= article.user.pseudo %></th>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 0.7rem;"><%= article.created_at.to_s.to_time.strftime("%d-%m-%Y, %H:%M") %></td>
+                        </tr>
+                    </table>
+                    <% if current_user == article.user %>
+                    <a href="/articles/<%= article.id %>/edit" class="btn btn-xs"><i class="bi bi-pencil"></i></a>
+                    <% end %>
+                </div>
+                <hr>
+                <div class="body">
+                    <blockquote class="blockquote">
+                        <%= article.message %>
+                    </blockquote>
+                </div>
+                <hr>
+                <div class="footer d-flex">
+                    <a href="#" class="btn btn-xs"><strong><i class="bi bi-chat-square"></i> Comment</strong></a>
+                    <% if article.status %>
+                    <a href="#" title="Résolu" class="btn btn-outline-dark position-relative">
+                        <strong>52</strong> Comments
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+                          <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </a>
+                    <% else %>
+                    <a href="#" title="Pas encore résolu" class="btn btn-outline-dark position-relative">
+                        <strong><%= article.message.size %></strong> Comments
+                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                          <span class="visually-hidden">New alerts</span>
+                        </span>
+                    </a>
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+        <div class="col-md-2"></div> 
+    </div>
+</section>

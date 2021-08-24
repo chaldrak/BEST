@@ -1,0 +1,16 @@
+<%= form_with(model: @article, local: true, url: choose_new_or_edit) do |form| %>
+    <%= render "partials/errors" %>
+    <div>
+        <%= form.label :Category %>
+        <%= form.select :category_id, @select_category %>
+    </div>
+    <div>
+        <%= form.label :Company %>
+        <%= form.select :company_id, @select_company %>
+    </div>
+    <div>
+        <%= form.label :Message %>
+        <%= form.text_area :message %>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+<% end %>
