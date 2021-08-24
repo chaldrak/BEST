@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :select_category, :select_company, only: [:new, :create, :edit, :update, :confirm]
+  before_action :select_category, :select_company, :get_companies, only: [:new, :create, :edit, :update, :confirm]
+  before_action :get_article_by_id, only: [:edit, :update]
 
   def index
     @articles = Article.all.order(created_at: :desc)
@@ -10,7 +11,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def confirm
@@ -19,8 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = Article.find(params[:id])
-    if article.update(article_params)
+    if @article.update(article_params)
       flash[:info] = "Article updated successfully"
       redirect_to articles_path
     else
@@ -42,6 +41,7 @@ class ArticlesController < ApplicationController
   private
   def select_category
     @select_category = []
+    @select_category << ["Choose one category", ""]
     Category.all.order(name: :asc).each do |cat|
       @select_category << [cat.name, cat.id]
     end
@@ -49,6 +49,7 @@ class ArticlesController < ApplicationController
 
   def select_company
     @select_company = []
+    @select_company << ["Choose one company", ""]
     Company.all.order(name: :asc).each do |comp|
       @select_company << [comp.name, comp.id]
     end
@@ -56,5 +57,17 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:category_id, :company_id, :message)
+  end
+
+  def get_article_by_id
+    @article = Article.find(params[:id])
+  end
+
+  def get_companies
+    @companies = Company.all.order(name: :asc)
+  end
+
+  def get_categories
+    @categories = Category.all.order(name: :asc)
   end
 end

@@ -1,9 +1,13 @@
 <div class="container">
   <section class="welcome" style="padding-top:20px">
+    <% if alert.present? || notice.present? %>
+    <div class="alert alert-info text-center">
+      <span><%= alert %></span>
+      <span><%= notice %></span>
+    </div>
+    <% end %>
     <h2 class="welcome-title">
-      Bienvenue sur BEST 
-      <span class="badge rounded-pill bg-info text-dark"><%= alert %></span>
-      <span class="badge rounded-pill bg-info text-dark"><%= notice %></span>
+      Bienvenue sur BEST  
     </h2>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum qui rem
