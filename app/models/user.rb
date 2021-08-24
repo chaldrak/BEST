@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :timeoutable, :trackable
+         :confirmable, :timeoutable, :trackable, :lockable
 
  
   validates :phone_number, numericality: { only_integer: true }, length: {is:8}
