@@ -1,0 +1,39 @@
+<section class="container">
+    <div class="row pt-4">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 main">
+            <h2>CONFIRMATION DE L'ARTICLE</h2>
+            <hr class="mb-4">
+            <%= form_with(model: @article, local: true) do |form| %>
+                <%= form.hidden_field :category_id %>
+                <%= form.hidden_field :company_id %>
+                <%= form.hidden_field :message %>
+                <table class="table mb-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Category :</th>
+                            <td scope="col"><%= @article.category.name %></td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col">Company :</th>
+                            <td scope="col"><%= @article.company.name %></td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col">Message :</th>
+                            <td scope="col"><%= @article.message %></td>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="d-flex" style="justify-content: space-between;">
+                    <%= form.submit "Submit", class: "btn btn-primary" %>
+                    <%= link_to "Back", new_article_path, class: "btn btn-secondary" %>
+                </div>
+            <% end %>
+        </div>
+        <div class="col-md-2"></div> 
+    </div>
+</section>

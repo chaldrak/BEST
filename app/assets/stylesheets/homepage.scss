@@ -1,69 +1,28 @@
-// Place all the styles related to the homepage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nanum+Gothic&display=swap&amily=Mulish');
 
-// html {
-//   min-height: 100vh;
-// }
-// body {
-//   margin: 0;
-//   padding: 0;
-// }
-
-// header {
-//   height: 70px;
-//   display: flex;
-//   justify-content: space-between;
-//   margin: 0 50px;
-//   align-items: center;
-//   background-color: #ccc;
-//   padding: 0;
-//   margin: 0;
-// }
-// header img {
-//   width: 100px;
-//   height: 100%;
-//   background-color: white;
-//   margin-left: 100px;
-// }
-// header ul {
-//   padding: 0;
-//   margin: 0;
-//   margin-right: 100px;
-// }
-// header nav ul::after {
-//   content: "";
-//   clear: both;
-//   display: block;
-// }
-
-// nav ul li {
-//   float: left;
-//   list-style: none;
-//   padding-left: 20px;
-// }
-// nav ul li a {
-//   text-decoration: none;
-//   display: block;
-//   color: #000;
-// }
-// nav ul li a:hover {
-//   text-decoration: none;
-//   display: block;
-//   color: white;
-// }
-
-// footer {
-//   background-color: #ccc;
-//   bottom: 0;
-//   padding: 20px 80px;
-//   display: flex;
-//   justify-content: center;
-// }
-
-section.welcome {
-  // padding: 20px 50px;
+body{
+  //font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Mulish', sans-serif;
+}
+section p {
   text-align: justify;
+}
+section .card-title{
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+section .card{
+  background-color: #ffda8f;
+  border: 2px solid #f5bb48;
+  margin-bottom: 20px;
+}
+.navbar-brand{
+  font-family: 'Abril Fatface', cursive;
+  font-size:30px;
+}
+.navbar{
+  background-color:#ffda8f;
 }
 .grid-section {
   display: grid;
@@ -79,25 +38,81 @@ section.welcome {
   display: flex;
   align-items: center;
 }
-// .auth-section {
-//   display: flex;
-//   justify-content: flex-end;
-//   padding: 20px 50px;
-// }
-// .auth-section a {
-//   text-decoration: none;
-//   font-size: 1.3rem;
-//   border: 1px solid black;
-//   padding: 5px;
-//   color: black;
-//   border-radius: 5px;
-// }
-// .auth-section a:hover {
-//   background-color: #ccc;
-//   color: white;
-//   border: 1px solid #ccc;
-// }
-// .container-default {
-//   min-height: 84vh;
-//   margin-left: 50px;
-// }
+
+/****************************************/
+.login-card {
+  overflow: hidden;
+}
+.login-card-img {
+  border-radius: 0;
+  height: 70%;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.card-body-login {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  background-color: #ffe3aa
+}
+.login-card .card-body-login {
+  padding: 85px 60px 60px;
+}
+.brand-wrapper {
+  margin-bottom: 19px;
+}
+.login-card-description {
+  font-size: 25px;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 23px;
+}
+.login-card form {
+  max-width: 326px;
+}
+form {
+  display: block;
+  margin-top: 0em;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+.login-card-footer-text {
+  font-size: 16px;
+  color: #0d2366;
+  margin-bottom: 60px;
+}
+.login-card .login-btn {
+  padding: 13px 20px 12px;
+  background-color: #000;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px;
+  width: 100%;
+}
+@media only screen and (max-width: 780px) {
+  .login-card form {
+    max-width: 100%;
+  }
+  .login-card-img{
+    display: none;
+  }
+  .card-body-login {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    background-color: #fff
+  }
+}

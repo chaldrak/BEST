@@ -1,0 +1,18 @@
+<%= form_with(model: @article, local: true, url: choose_new_or_edit) do |form| %>
+    <%= render "partials/errors" %>
+
+    <div class="mb-3">
+        <%= form.label :Category, class: "form-label" %>
+        <%= form.select :category_id, @select_category, { wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, {class:"form-select"} %> 
+    </div>
+    <div class="mb-3">
+        <%= form.label :Company, class: "form-label" %>
+        <%= form.select :company_id, @select_company, { wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, class:"form-select" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :Message, class: "form-label" %>
+        <%= form.text_area :message, class: "form-control", id: "exampleInputEmail1" %>
+        <div id="emailHelp" class="form-text">This area must contain minimum 10 characters</div>
+    </div>
+    <%= form.submit "Submit", class: "btn btn-primary mb-4" %>
+<% end %>

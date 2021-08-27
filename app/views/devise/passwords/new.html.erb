@@ -1,3 +1,37 @@
+<div class="container-fluid" >
+  <div class="card login-card">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="/user-login-bg.png" alt="login" class="login-card-img">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body-login">
+          <div class="brand-wrapper d-flex">
+            <img src="/best-icon1.png" alt="logo" class="logo" width="50">
+            <p class="h2"> BEST</p>
+          </div>
+          <p class="login-card-description">Forgot your password?</p>
+          <% if notice.present? || alert.present? %>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          <% end %>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <div class="form-group mb-4">
+                <%= f.label :email, class:"sr-only" %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+              </div>
+
+              <div class="form-group mb-4">
+                <%= f.submit "Send me reset password instructions", class:"btn login-btn" %>
+              </div>
+            <% end %>
+            
+            <%= render "partials/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
